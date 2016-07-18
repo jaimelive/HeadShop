@@ -24,7 +24,7 @@ public class GetHeadCommand implements CommandExecutor{
 	public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
 		if (!(commandSender instanceof Player)) return false;
 		Player player = (Player) commandSender;
-		HeadShop.givePlayerItemStack(player, HeadFactory.createHead(player.getName()));
+		HeadShop.giveOwnHead(player);
 		return true;
 	}
 }
