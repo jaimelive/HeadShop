@@ -1,0 +1,28 @@
+name: HeadShop
+author: Jaime Live
+website: www.powertrip.pt
+version: 0.1-SNAPSHOT
+main: pt.powertrip.gladius.headshop.HeadShopPlugin
+database: false
+
+commands:
+  gethead:
+    description: Get a player's head.
+    usage: /gethead <username>
+    permission: headshop.buy
+    permission-message: §4You can't buy heads.
+    aliases: [ghead, gh]
+
+permissions:
+  headshop.*:
+    description: Gives all permissions
+    default: false
+    children:
+      headshop.buy: true
+      headshop.free: true
+  headshop.buy:
+    description: Allows you to buy a head.
+    default: true
+  headshop.free:
+    description: Allows you to get heads for free.
+    default: false

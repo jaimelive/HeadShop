@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HeadShop:jar">
+    <output-path>S:/devcraft/plugins</output-path>
+    <root id="archive" name="HeadShop.jar">
+      <element id="module-output" name="HeadShop" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/config.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+    </root>
+  </artifact>
+</component>
