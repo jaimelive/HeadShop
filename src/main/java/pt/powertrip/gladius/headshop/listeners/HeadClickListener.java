@@ -1,8 +1,10 @@
 package pt.powertrip.gladius.headshop.listeners;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.mojang.authlib.GameProfile;
 import org.bukkit.Material;
 import org.bukkit.SkullType;
-import org.bukkit.block.Block;
 import org.bukkit.block.Skull;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -35,8 +37,8 @@ public class HeadClickListener implements Listener {
 			((Skull)event.getClickedBlock().getState()).getSkullType().ordinal() == SkullType.PLAYER.ordinal()
 		){
 			Skull skull = (Skull) event.getClickedBlock().getState();
-			String skinUrl = HeadFactory.getSkinUrlFromSkull(skull);
-			HeadShop.givePlayerItemStack( event.getPlayer(), HeadFactory.createTexturedHead(skinUrl));
+			GameProfile profile = HeadFactory.getSkullGameProfile(skull);
+			HeadShop.givePlayerItemStack( event.getPlayer(), HeadFactory.createHeadFromGameProfile(profile));
 		}
 	}
 }
